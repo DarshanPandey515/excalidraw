@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.canvas-grid {
+  background-color: #f8f7f4;
+  background-image:
+    radial-gradient(#00000012 1px, transparent 1px),
+    linear-gradient(#00000006 1px, transparent 1px),
+    linear-gradient(90deg, #00000006 1px, transparent 1px);
+  background-size:
+    24px 24px,
+    120px 120px,
+    120px 120px;
+}
