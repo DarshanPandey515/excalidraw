@@ -9,8 +9,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 if not SECRET_KEY:
-    # Fallback so Vercel's build-time collectstatic can run without env vars.
-    # Always set DJANGO_SECRET_KEY in production.
     SECRET_KEY = "django-insecure-dev-secret-change-in-production"
 
 DEBUG = os.getenv("DJANGO_DEBUG", "True").lower() in ("true", "1", "yes")
