@@ -112,8 +112,3 @@ Both folders ship with a `vercel.json`. Create two Vercel projects from this rep
 - **Frontend:** React, Vite, Konva / react-konva, Tailwind CSS
 - **Backend:** Django, Django REST Framework, SimpleJWT
 - **Database:** SQLite (local dev) / PostgreSQL (production)
-
-## Security notes
-
-- Secrets live in `.env` files which are git-ignored in both folders — never commit them.
-- Auth is stateless JWT (Bearer tokens), so CORS can stay permissive during development.
