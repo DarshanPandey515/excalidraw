@@ -1,20 +1,18 @@
-import { STORAGE_KEY, LEGACY_KEY } from '../constants';
+const cacheKey = (boardId) => `excalidraw-clone.board.${boardId}`;
 
-export const loadElements = () => {
+export const loadLocalCache = (boardId) => {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
-    const legacy = localStorage.getItem(LEGACY_KEY);
-    if (legacy) {
-      const strokes = JSON.parse(legacy);
-      return strokes.map((s) => ({ ...s, type: 'pen' }));
-    }
-    return [];
+    const raw = localStorage.getItem(cacheKey(boardId));
+    return raw ? JSON.parse(raw) : null;
   } catch {
-    return [];
+    return null;
   }
 };
 
-export const saveElements = (elements) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(elements));
+export const saveLocalCache = (boardId, elements) => {
+  try {
+    localStorage.setItem(cacheKey(boardId), JSON.stringify(elements));
+  } catch {
+    // storage full or unavailable — ignore
+  }
 };

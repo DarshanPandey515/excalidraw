@@ -1,6 +1,3 @@
-export const STORAGE_KEY = 'excalidraw-clone.elements.v3';
-export const LEGACY_KEY = 'excalidraw-clone.strokes.v1';
-
 export const MIN_ZOOM = 0.2;
 export const MAX_ZOOM = 4;
 export const FONT_SIZE = 20;
